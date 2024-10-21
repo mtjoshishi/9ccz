@@ -1,8 +1,8 @@
-ZIGBUILD=zig build-exe
+CC=zig
 ZIGFLAGS=-fno-strip -static
 
-9ccz:
-	$(ZIGBUILD) $(ZIGFLAGS) 9ccz.zig
+9ccz: 9ccz.zig
+	$(CC) build-exe $(ZIGFLAGS) $<
 
 test: 9ccz
 	./test.sh
