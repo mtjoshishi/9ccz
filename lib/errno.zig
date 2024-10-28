@@ -1,0 +1,36 @@
+// libc-compliant error number definitions.
+
+pub const EPERM: u8 = 1; // Operation not permitted
+pub const ENOENT: u8 = 2; // No such file or directory
+pub const ESRCH: u8 = 3; // No such process
+pub const EINTR: u8 = 4; // Interrupted system call
+pub const EIO: u8 = 5; // I/O error
+pub const ENXIO: u8 = 6; // No such device or address
+pub const E2BIG: u8 = 7; // Argument list too long
+pub const ENOEXEC: u8 = 8; // Exec format error
+pub const EBADF: u8 = 9; // Bad file number
+pub const ECHILD: u8 = 10; // No child processes
+pub const EAGAIN: u8 = 11; // Try again
+pub const ENOMEM: u8 = 12; // Out of memory
+pub const EACCES: u8 = 13; // Permission denied
+pub const EFAULT: u8 = 14; // Bad address
+pub const ENOTBLK: u8 = 15; // Block device required
+pub const EBUSY: u8 = 16; // Device or resource busy
+pub const EEXIST: u8 = 17; // File exists
+pub const EXDEV: u8 = 18; // Cross-device link
+pub const ENODEV: u8 = 19; // No such device
+pub const ENOTDIR: u8 = 20; // Not a directory
+pub const EISDIR: u8 = 21; // Is a directory
+pub const EINVAL: u8 = 22; // Invalid argument
+pub const ENFILE: u8 = 23; // File table overflow
+pub const EMFILE: u8 = 24; // Too many open files
+pub const ENOTTY: u8 = 25; // Not a typewriter
+pub const ETXTBSY: u8 = 26; // Text file busy
+pub const EFBIG: u8 = 27; // File too large
+pub const ENOSPC: u8 = 28; // No space left on device
+pub const ESPIPE: u8 = 29; // Illegal seek
+pub const EROFS: u8 = 30; // Read-only file system
+pub const EMLINK: u8 = 31; // Too many links
+pub const EPIPE: u8 = 32; // Broken pipe
+pub const EDOM: u8 = 33; // Math argument out of domain of func
+pub const ERANGE: u8 = 34; // Math result not representable
