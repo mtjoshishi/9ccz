@@ -4,9 +4,12 @@ const print = std.debug.print;
 const strToInt64 = @import("./lib/str_to_int64.zig").strToInt64;
 
 pub fn main() !u8 {
-    const alc = std.heap.page_allocator;
-    const args = try std.process.argsAlloc(alc);
-    defer std.process.argsFree(alc, args);
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    defer arena.deinit();
+
+    const allocator = arena.allocator();
+    const args = try std.process.argsAlloc(allocator);
+    defer std.process.argsFree(allocator, args);
 
     if (args.len != 2) {
         print("{s}: invalid numbers of arguments", .{args[0]});
