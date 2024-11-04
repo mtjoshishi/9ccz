@@ -26,16 +26,12 @@ const parsedStrToInt64 = struct {
     errno: u8,
 };
 
-fn isSpace(c: u8) bool {
-    return c == ' ';
-}
-
 pub fn strToInt64(s: []const u8, base: u8) !parsedStrToInt64 {
     var is_neg: bool = false;
     var pos: usize = 0;
     var errno_: u8 = 0;
 
-    while (isSpace(s[pos])) : (pos += 1) {}
+    while (std.ascii.isWhitespace(s[pos])) : (pos += 1) {}
     if (s[pos] == '-') {
         is_neg = true;
         pos += 1;
